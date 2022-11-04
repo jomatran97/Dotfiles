@@ -119,6 +119,41 @@ nvim_lsp.dockerls.setup {
   filetypes = { "dockerfile" },
   cmd = { "docker-langserver", "--stdio" }
 }
+
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  cmd = { "typescript-language-server", "--stdio" },
+  capabilities = capabilities
+}
+
+nvim_lsp.bashls.setup {
+  on_attach = on_attach,
+  filetypes = { "sh" },
+  cmd = { "bash-language-server", "start" },
+  cmd_env = {
+    GLOB_PATTERN = "*@(.sh|.inc|.bash|.command)"
+  },
+  single_file_support = true,
+  capabilities = capabilities
+}
+
+
+nvim_lsp.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+nvim_lsp.astro.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,

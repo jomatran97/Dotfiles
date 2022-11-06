@@ -38,4 +38,8 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 keymap.set("n", "<leader>q", "<cmd>q!<cr>")
 
 -- saving file quickly
-keymap.set("n", "<leader>w", "<cmd>w<cr>")
+keymap.set("n", "<C-s>", "<cmd>w<cr>")
+keymap.set("i", "<C-s>", "<esc><cmd>w<cr>")
+
+-- set no highlight
+keymap.set("n", "<leader>h", "<cmd>set nohlsearch<cr>")

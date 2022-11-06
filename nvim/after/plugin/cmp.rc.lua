@@ -16,7 +16,7 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true
-    }),
+    })
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },

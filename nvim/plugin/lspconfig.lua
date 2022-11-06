@@ -122,7 +122,7 @@ nvim_lsp.dockerls.setup {
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
@@ -138,18 +138,28 @@ nvim_lsp.bashls.setup {
   capabilities = capabilities
 }
 
-
-nvim_lsp.tailwindcss.setup {
+nvim_lsp.html.setup {
   on_attach = on_attach,
+  filetypes = { "html" },
+  cmd = { "vscode-html-language-server", "--stdio" },
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+    },
+    provideFormatter = true
+  },
   capabilities = capabilities
 }
+
 
 nvim_lsp.cssls.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
 
-nvim_lsp.astro.setup {
+nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }

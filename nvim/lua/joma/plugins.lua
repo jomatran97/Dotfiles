@@ -53,4 +53,5 @@ packer.startup(function(use)
   }
 
   use "akinsho/toggleterm.nvim" -- floating terminal
+  use "terrortylor/nvim-comment" -- comment code
 end)

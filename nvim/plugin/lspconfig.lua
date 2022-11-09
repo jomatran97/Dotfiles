@@ -33,6 +33,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
   --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
@@ -114,7 +115,7 @@ nvim_lsp.dockerls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    enable_format_on_save(client, bufnr)
+    -- enable_format_on_save(client, bufnr)
   end,
   filetypes = { "dockerfile" },
   cmd = { "docker-langserver", "--stdio" }
@@ -150,9 +151,9 @@ nvim_lsp.html.setup {
     },
     provideFormatter = true
   },
-  capabilities = capabilities
+  capabilities = capabilities,
+  single_file_support = true
 }
-
 
 nvim_lsp.cssls.setup {
   on_attach = on_attach,

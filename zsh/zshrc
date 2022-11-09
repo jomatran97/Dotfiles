@@ -129,6 +129,11 @@ alias status="git status"
 alias merge="git merge"
 alias restore="git restore"
 alias diff="git diff"
+alias rename="git branch -m"
 
 #nvim
 alias vi="nvim"
+
+# Quickly change code folder
+alias tyme="cd ~/Documents/tyme/code"
+alias codefun="cd ~/Documents/codefun/"

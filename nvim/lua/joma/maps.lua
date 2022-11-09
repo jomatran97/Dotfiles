@@ -43,3 +43,16 @@ keymap.set("i", "<C-s>", "<esc><cmd>w<cr>")
 
 -- set no highlight
 keymap.set("n", "<leader>h", "<cmd>set nohlsearch<cr>")
+
+-- Indent mode
+keymap.set("v", "<S-Tab>", "<gv")
+keymap.set("v", "<Tab>", ">gv")
+
+-- Quickly to exit editor
+keymap.set("i", "jk", "<esc>")
+
+-- remove all empty line
+keymap.set("n", "<C-d>", "<cmd>g/^$/d<cr>")
+
+-- Quickly open file
+keymap.set("n", "<leader>o", "<esc>:e")

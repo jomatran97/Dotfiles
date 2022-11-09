@@ -29,8 +29,8 @@ keymap.set('n', 'zj', '<C-w>j')
 keymap.set('n', 'zl', '<C-w>l')
 
 -- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
+keymap.set('n', '[', '<C-w><')
+keymap.set('n', ']', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
@@ -50,6 +50,7 @@ keymap.set("v", "<Tab>", ">gv")
 
 -- Quickly to exit editor
 keymap.set("i", "jk", "<esc>")
+keymap.set("i", "kj", "<esc>")
 
 -- remove all empty line
 keymap.set("n", "<C-d>", "<cmd>g/^$/d<cr>")

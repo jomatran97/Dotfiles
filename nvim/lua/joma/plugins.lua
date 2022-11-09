@@ -59,4 +59,8 @@ packer.startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
   } -- Easy move to any where in a file
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+  }) -- change surround
 end)

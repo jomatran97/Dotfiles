@@ -55,4 +55,8 @@ packer.startup(function(use)
 
   use "akinsho/toggleterm.nvim" -- floating terminal
   use "terrortylor/nvim-comment" -- comment code
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+  } -- Easy move to any where in a file
 end)

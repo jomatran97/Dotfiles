@@ -130,6 +130,8 @@ alias merge="git merge"
 alias restore="git restore"
 alias diff="git diff"
 alias rename="git branch -m"
+alias del="git branch -d"
+alias branch="git branch"
 
 #nvim
 alias vi="nvim"
@@ -137,3 +139,6 @@ alias vi="nvim"
 # Quickly change code folder
 alias tyme="cd ~/Documents/tyme/code"
 alias codefun="cd ~/Documents/codefun/"
+
+#tmux 
+alias tma="tmux attach-session"

@@ -57,3 +57,7 @@ keymap.set("n", "<C-d>", "<cmd>g/^$/d<cr>")
 
 -- Quickly open file
 keymap.set("n", "<leader>o", "<esc>:e")
+
+-- Toggle relative number
+keymap.set("n", "<leader>r", "<cmd>set relativenumber!<cr>")
+keymap.set("v", "<leader>r", "<cmd>set relativenumber!<cr>")

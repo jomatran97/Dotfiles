@@ -8,3 +8,5 @@ hop.setup {
 }
 vim.keymap.set("n", "<leader>hs1", "<cmd>HopChar1<cr>")
 vim.keymap.set("n", "<leader>hsw", "<cmd>HopPattern<cr>")
+vim.keymap.set("v", "<leader>hs1", "<cmd>HopChar1<cr>")
+vim.keymap.set("v", "<leader>hsw", "<cmd>HopPattern<cr>")

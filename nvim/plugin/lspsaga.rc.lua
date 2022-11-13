@@ -20,7 +20,7 @@ saga.init_lsp_saga({
   -- is function type it will have a param `entry`
   -- entry is a table type has these filed
   -- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
-  diagnostic_header = { " ", " ", " ", "ﴞ " },
+  diagnostic_header = { "🙀", "😿", "😾", "😺" },
   -- preview lines of lsp_finder and definition preview
   max_preview_lines = 10,
   -- use emoji lightbulb in default

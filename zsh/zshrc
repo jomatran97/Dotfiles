@@ -132,6 +132,7 @@ alias diff="git diff"
 alias rename="git branch -m"
 alias del="git branch -d"
 alias branch="git branch"
+alias fetch="git fetch origin"
 
 #nvim
 alias vi="nvim"

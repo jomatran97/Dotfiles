@@ -112,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # custom alias
-#pythoh
+#python
 alias pip=pip3
 alias venv="virtualenv"
 

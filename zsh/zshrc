@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # custom alias
 #python
 alias pip=pip3
-alias venv="virtualenv"
+alias venv="python3 -m venv"
 
 # git
 alias glog='git log --graph --oneline --decorate --all'
@@ -138,7 +138,9 @@ alias fetch="git fetch origin"
 alias vi="nvim"
 
 # Quickly change code folder
-alias tyme="cd ~/Documents/tyme/code"
+alias ph="cd ~/Documents/tyme/code/ph"
+alias tc="cd ~/Documents/tyme/code/tc"
+alias tb="cd ~/Documents/tyme/code/tb"
 alias codefun="cd ~/Documents/codefun/"
 
 #tmux 

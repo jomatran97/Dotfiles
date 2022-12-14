@@ -27,8 +27,9 @@ vim.opt.tabstop = 2
 vim.opt.wrap = true -- No Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
-vim.opt.wildignore:append { '*/node_modules/*' }
-
+-- vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.mouse = "a"
+vim.opt.timeoutlen = 1000
 vim.opt.swapfile = false
 
 vim.cmd([[let &t_Cs = "\e[4:3m"]])

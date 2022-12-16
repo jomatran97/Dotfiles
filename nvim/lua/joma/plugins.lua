@@ -59,6 +59,7 @@ packer.startup(function(use)
 
   use "akinsho/toggleterm.nvim" -- floating terminal
   use "terrortylor/nvim-comment" -- comment code
+  use "nvim-telescope/telescope-fzy-native.nvim"
   use {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended

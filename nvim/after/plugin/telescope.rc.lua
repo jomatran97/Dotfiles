@@ -5,13 +5,10 @@ end
 
 local actions = require "telescope.actions"
 local builtin = require("telescope.builtin")
-local function telescope_buffer_dir()
-  return vim.fn.expand('%:p:h')
-end
 
 telescope.setup {
   defaults = {
-    prompt_prefix = " ",
+    prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
     file_ignore_patterns = {
@@ -212,9 +209,6 @@ vim.keymap.set('n', ';f',
 vim.keymap.set('n', ';r', function()
   builtin.live_grep()
 end)
-vim.keymap.set('n', '\\\\', function()
-  builtin.buffers()
-end)
 vim.keymap.set('n', ';t', function()
   builtin.help_tags()
 end)
@@ -223,16 +217,4 @@ vim.keymap.set('n', ';;', function()
 end)
 vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
-end)
-vim.keymap.set("n", "sf", function()
-  telescope.extensions.file_browser.file_browser({
-    path = "%:p:h",
-    cwd = telescope_buffer_dir(),
-    respect_gitignore = false,
-    hidden = true,
-    grouped = true,
-    previewer = false,
-    initial_mode = "normal",
-    layout_config = { height = 40 }
-  })
 end)

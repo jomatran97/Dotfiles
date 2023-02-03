@@ -117,22 +117,24 @@ alias pip=pip3
 alias venv="python3 -m venv"
 
 # git
-alias glog='git log --graph --oneline --decorate --all'
-alias add='git add'
-alias commit="git commit"
+alias glog="git log --graph --oneline --decorate --all"
+alias add="git add"
+alias commit="git commit -am"
+alias commita="git commit --amend"
 alias push="git push origin"
 alias squash="git rebase"
 alias rebase="git rebase"
 alias pull="git pull origin"
 alias checkout="git checkout"
-alias status="git status"
-alias merge="git merge"
+alias sts="git status"
+alias merge="git merge --no-ff"
 alias restore="git restore"
 alias diff="git diff"
 alias rename="git branch -m"
 alias del="git branch -d"
 alias branch="git branch"
 alias fetch="git fetch origin"
+alias revert="git reset --hard"
 
 #nvim
 alias vi="nvim"
@@ -145,3 +147,9 @@ alias codefun="cd ~/Documents/codefun/"
 
 #tmux 
 alias tma="tmux attach-session"
+
+#list dir
+alias ls="ls -lha"
+
+#aws
+alias gt="aws sso login --sso-session gotyme-nprd"

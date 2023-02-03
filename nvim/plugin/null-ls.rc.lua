@@ -14,7 +14,7 @@ end
 
 null_ls.setup {
   sources = {
-    null_ls.builtins.formatting.prettier, --format JavaScript · TypeScript · Flow · JSX · JSON CSS · SCSS · Less HTML · Vue · Angular GraphQL · Markdown · YAML
+    -- null_ls.builtins.formatting.prettier, --format JavaScript · TypeScript · Flow · JSX · JSON CSS · SCSS · Less HTML · Vue · Angular GraphQL · Markdown · YAML
     null_ls.builtins.formatting.autopep8, --format python,
   },
   on_attach = function(client, bufnr)

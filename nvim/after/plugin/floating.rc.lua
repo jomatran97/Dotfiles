@@ -1,3 +1,2 @@
 require("toggleterm").setup()
-vim.keymap.set("n", "<F1>", "<cmd>ToggleTerm direction=float<cr>")
-
+vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm direction=float<cr>")

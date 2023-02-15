@@ -117,24 +117,27 @@ alias pip=pip3
 alias venv="python3 -m venv"
 
 # git
-alias glog="git log --graph --oneline --decorate --all"
-alias add="git add"
-alias commit="git commit -am"
-alias commita="git commit --amend"
-alias push="git push origin"
-alias squash="git rebase"
-alias rebase="git rebase"
-alias pull="git pull origin"
-alias checkout="git checkout"
-alias sts="git status"
-alias merge="git merge --no-ff"
-alias restore="git restore"
-alias diff="git diff"
-alias rename="git branch -m"
-alias del="git branch -d"
-alias branch="git branch"
-alias fetch="git fetch origin"
-alias revert="git reset --hard"
+alias gl="git log --graph --oneline --decorate --all"
+alias ad="git add"
+alias cm="git commit -am"
+alias cma="git commit --amend"
+alias psh="git push origin"
+alias sq="git rebase"
+alias rb="git rebase"
+alias gp="git pull origin"
+alias ck="git checkout"
+alias st="git status"
+alias mg="git merge --no-ff"
+alias rs="git restore"
+alias df="git diff"
+alias rn="git branch -m"
+alias dl="git branch -d"
+alias br="git branch"
+alias abr="git branch -r"
+alias ft="git fetch origin"
+alias rv="git reset --hard"
+alias su="git clean -n -d"
+alias ru="git clean -f"
 
 #nvim
 alias vi="nvim"
@@ -149,7 +152,10 @@ alias codefun="cd ~/Documents/codefun/"
 alias tma="tmux attach-session"
 
 #list dir
-alias ls="ls -lha"
+alias ls="ls -la"
 
 #aws
 alias gt="aws sso login --sso-session gotyme-nprd"
+
+# funny alias
+alias pl="sudo"

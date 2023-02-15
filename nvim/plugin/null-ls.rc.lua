@@ -11,15 +11,6 @@ null_ls.setup {
 }
 
 vim.api.nvim_create_user_command(
-  'DisableLspFormatting',
-  function()
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = 0 })
-  end,
-  { nargs = 0 }
-)
-
-
-vim.api.nvim_create_user_command(
   'LspFormatting',
   function()
     vim.lsp.buf.format({

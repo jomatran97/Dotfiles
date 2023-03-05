@@ -18,7 +18,7 @@ require('packer').startup(function(use)
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'glepnir/lspsaga.nvim', -- LSP UIs
-    'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    -- 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   }
   use {
     'hrsh7th/cmp-buffer', -- nvim-cmp source for buffer words

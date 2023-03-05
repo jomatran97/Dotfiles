@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # custom alias
 #python
 alias pip=pip3
-alias venv="python3 -m venv"
+alias venv="python3.7 -m venv"
 
 # git
 alias gl="git log --graph --oneline --decorate --all"
@@ -146,16 +146,28 @@ alias vi="nvim"
 alias ph="cd ~/Documents/tyme/code/ph"
 alias tc="cd ~/Documents/tyme/code/tc"
 alias tb="cd ~/Documents/tyme/code/tb"
+alias plc="cd ~/Documents/tyme/code/platform"
 alias codefun="cd ~/Documents/codefun/"
 
 #tmux 
 alias tma="tmux attach-session"
-
+alias tmx="tmux"
 #list dir
-alias ls="ls -la"
+# alias ls="ls -la"
 
 #aws
 alias gt="aws sso login --sso-session gotyme-nprd"
 
 # funny alias
-alias pl="sudo"
+alias pls="sudo"
+
+#Em nuoi command
+alias em_nuoi="python3 /Users/haitran/Documents/codefun/Python/em_nuoi/main.py"
+# Mac setup for pomo
+alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -sound Crystal"
+        
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -sound Crystal"

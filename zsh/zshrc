@@ -150,6 +150,7 @@ alias codefun="cd ~/Documents/codefun/"
 
 #tmux 
 alias tma="tmux attach-session"
+alias tmx="tmux"
 
 #list dir
 alias ls="ls -la"

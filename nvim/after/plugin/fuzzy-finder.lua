@@ -1,71 +1,15 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
-
-local actions = require "telescope.actions"
+local status, telescope = pcall(require, "telescope")
+if (not status) then return end
+local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
-telescope.setup {
-  defaults = {
-    prompt_prefix = " ",
-    selection_caret = " ",
-    path_display = { "smart" },
-    file_ignore_patterns = {
-      ".git/",
-      "target/",
-      "docs/",
-      "vendor/*",
-      "%.lock",
-      "__pycache__/*",
-      "%.sqlite3",
-      "%.ipynb",
-      "node_modules/*",
-      -- "%.jpg",
-      -- "%.jpeg",
-      -- "%.png",
-      "%.svg",
-      "%.otf",
-      "%.ttf",
-      "%.webp",
-      ".dart_tool/",
-      ".github/",
-      ".gradle/",
-      ".idea/",
-      ".settings/",
-      ".vscode/",
-      "__pycache__/",
-      "build/",
-      "env/",
-      "gradle/",
-      "node_modules/",
-      "%.pdb",
-      "%.dll",
-      "%.class",
-      "%.exe",
-      "%.cache",
-      "%.ico",
-      "%.pdf",
-      "%.dylib",
-      "%.jar",
-      "%.docx",
-      "%.met",
-      "smalljre_*/*",
-      ".vale/",
-      "%.burp",
-      "%.mp4",
-      "%.mkv",
-      "%.rar",
-      "%.zip",
-      "%.7z",
-      "%.tar",
-      "%.bz2",
-      "%.epub",
-      "%.flac",
-      "%.tar.gz",
-    },
+local function telescope_buffer_dir()
+	return vim.fn.expand('%:p:h')
+end
 
-    mappings = {
+telescope.setup {
+	defaults = {
+		mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
         ["<C-p>"] = actions.cycle_history_prev,
@@ -142,79 +86,77 @@ telescope.setup {
 
         ["?"] = actions.which_key,
       },
-    },
-  },
-  pickers = {
+  	},
+		prompt_prefix = " ",
+		selection_caret = " ",
+		path_display = { "smart" },
+	},
+	pickers = {
 
-    live_grep = {
-      theme = "dropdown",
-    },
-    grep_string = {
-      theme = "dropdown",
-    },
-    find_files = {
-      theme = "dropdown",
-      previewer = false,
-    },
-    buffers = {
-      theme = "dropdown",
-      previewer = false,
-      initial_mode = "normal",
-    },
-    planets = {
-      show_pluto = true,
-      show_moon = true,
-    },
-    colorscheme = {
-      -- enable_preview = true,
-    },
-    lsp_references = {
-      theme = "dropdown",
-      initial_mode = "normal",
-    },
-    lsp_definitions = {
-      theme = "dropdown",
-      initial_mode = "normal",
-    },
-    lsp_declarations = {
-      theme = "dropdown",
-      initial_mode = "normal",
-    },
-    lsp_implementations = {
-      theme = "dropdown",
-      initial_mode = "normal",
-    },
+		live_grep = {
+			theme = "dropdown",
+		},
+		grep_string = {
+			theme = "dropdown",
+		},
+		find_files = {
+			theme = "dropdown",
+			previewer = false,
+		},
+		buffers = {
+			theme = "dropdown",
+			previewer = false,
+			initial_mode = "normal",
+		},
+		planets = {
+			show_pluto = true,
+			show_moon = true,
+		},
+		colorscheme = {
+			-- enable_preview = true,
+		},
+		lsp_references = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
+		lsp_definitions = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
+		lsp_declarations = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
+		lsp_implementations = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
 
 
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  },
-  extensions = {
-  },
+	},
+	extensions = {
+	},
 }
 
-
 vim.keymap.set('n', ';f',
-  function()
-    builtin.find_files({
-      no_ignore = false,
-      hidden = true
-    })
-  end)
+	function()
+		builtin.find_files({
+			no_ignore = false,
+			hidden = true
+		})
+	end)
 vim.keymap.set('n', ';r', function()
-  builtin.live_grep()
+	builtin.live_grep()
+end)
+vim.keymap.set('n', '\\\\', function()
+	builtin.buffers()
 end)
 vim.keymap.set('n', ';t', function()
-  builtin.help_tags()
+	builtin.help_tags()
 end)
 vim.keymap.set('n', ';;', function()
-  builtin.resume()
+	builtin.resume()
 end)
 vim.keymap.set('n', ';e', function()
-  builtin.diagnostics()
+	builtin.diagnostics()
 end)

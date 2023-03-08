@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -15,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="jonathan"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -118,26 +120,6 @@ alias venv="python3 -m venv"
 
 # git
 alias gl="git log --graph --oneline --decorate --all"
-alias ad="git add"
-alias cm="git commit -am"
-alias cma="git commit --amend"
-alias psh="git push origin"
-alias sq="git rebase"
-alias rb="git rebase"
-alias gp="git pull origin"
-alias ck="git checkout"
-alias st="git status"
-alias mg="git merge --no-ff"
-alias rs="git restore"
-alias df="git diff"
-alias rn="git branch -m"
-alias dl="git branch -d"
-alias br="git branch"
-alias abr="git branch -r"
-alias ft="git fetch origin"
-alias rv="git reset --hard"
-alias su="git clean -n -d"
-alias ru="git clean -f"
 
 #nvim
 alias vi="nvim"
@@ -146,7 +128,8 @@ alias vi="nvim"
 alias ph="cd ~/Documents/tyme/code/ph"
 alias tc="cd ~/Documents/tyme/code/tc"
 alias tb="cd ~/Documents/tyme/code/tb"
-alias codefun="cd ~/Documents/codefun/"
+alias codefun="cd ~/Documents/personal/codefun/"
+alias ext="cd ~/Documents/external/"
 
 #tmux 
 alias tma="tmux attach-session"
@@ -155,8 +138,10 @@ alias tmx="tmux"
 #list dir
 alias ls="ls -la"
 
-#aws
-alias gt="aws sso login --sso-session gotyme-nprd"
-
 # funny alias
 alias pl="sudo"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

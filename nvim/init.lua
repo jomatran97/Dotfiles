@@ -1,12 +1,24 @@
-require('joma.base')
-require('joma.highlights')
-require('joma.maps')
-require('joma.plugins')
-
-local has = vim.fn.has
-local is_mac = has "macunix"
-
-if is_mac then
-  require('joma.macos')
-end
-
+require ("joma.options")
+require ("joma.plugins")
+require ("joma.colorscheme")
+require ("joma.nvimtree")
+require ("joma.nvim-webdev-icons")
+require ("joma.whichkey")
+require ("joma.keymaps")
+require ("joma.telescope")
+require ("joma.lualine")
+require ("joma.neoscroll")
+require ("joma.numb")
+require ("joma.treesitter")
+require ("joma.ts-context")
+require ("joma.tabout")
+require ("joma.surround")
+require ("joma.cmp")
+require ("joma.lsp")
+require ("joma.lsp-inlayhints")
+require ("joma.navic")
+require ("joma.winbar")
+require ("joma.functions")
+require ("joma.symbol_outline")
+require ("joma.toggleterm")
+require ("joma.autopairs")

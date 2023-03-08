@@ -21,6 +21,7 @@ require('packer').startup(function(use)
 	use 'echasnovski/mini.nvim'
 	-- git
 	use 'dinhhuy258/git.nvim'
+	use 'lewis6991/gitsigns.nvim'
 	-- move motion
 	use 'phaazon/hop.nvim'
 	use 'nvim-tree/nvim-web-devicons'

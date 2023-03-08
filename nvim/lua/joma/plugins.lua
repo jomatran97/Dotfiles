@@ -37,7 +37,10 @@ require('packer').startup(function(use)
 	-- treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
+		run = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
 	}
 	-- lsp
 	use 'neovim/nvim-lspconfig'
@@ -61,7 +64,7 @@ require('packer').startup(function(use)
 	use 'hrsh7th/cmp-path'
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
-	use 'David-Kunz/cmp-npm'
+	use 'rafamadriz/friendly-snippets'
 	-- Utils
 	use({
     "kylechui/nvim-surround",

@@ -90,6 +90,7 @@ nvim_lsp.lua_ls.setup {
 	capabilities = capabilities,
 	single_file_support= true
 }
+
 nvim_lsp.tsserver.setup {
 	on_attach = on_attach,
 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },

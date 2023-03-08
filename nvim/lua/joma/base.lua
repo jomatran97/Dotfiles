@@ -32,3 +32,5 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = '*',
   command = "set nopaste"
 })
+-- turn of add new line at the end
+vim.cmd[[set nofixendofline]]

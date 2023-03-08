@@ -67,10 +67,7 @@ require('packer').startup(function(use)
 	use 'saadparwaiz1/cmp_luasnip'
 	use 'rafamadriz/friendly-snippets'
 	-- Utils
-	use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-  })
+	use "tpope/vim-surround"
 	use 'windwp/nvim-autopairs'
 	use 'akinsho/toggleterm.nvim'
 end)

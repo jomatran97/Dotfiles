@@ -118,19 +118,23 @@ return packer.startup(function(use)
   use "SmiteshP/nvim-navic"
   use "simrat39/symbols-outline.nvim"
   use "b0o/SchemaStore.nvim"
-  use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
   use "lvimuser/lsp-inlayhints.nvim"
   -- use "simrat39/inlay-hints.nvim"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+  use {"folke/trouble.nvim",
+      wants = {"nvim-tree/nvim-web-devicons"}} 
+  use "onsails/lspkind-nvim"
 
     -- Java
   use "mfussenegger/nvim-jdtls"
-  use {"folke/trouble.nvim",
-      wants = {"nvim-tree/nvim-web-devicons"}} 
 
   -- Terminal
   use "akinsho/toggleterm.nvim"
+
+  -- Comment
+  use "numToStr/Comment.nvim"
+  use "folke/todo-comments.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -1,4 +1,4 @@
-local surround = require ("nvim-surround")
+local surround = require "nvim-surround"
 
 surround.setup {
   keymaps = { -- vim-surround style keymaps
@@ -71,4 +71,3 @@ surround.setup {
 -- keymap("n", "<leader>'", [[ysiw']], opts)
 
 vim.cmd [[nmap <leader>' siw']]
-

@@ -28,7 +28,7 @@ require "joma.lsp.lsp-signature"
 -- require "user.lsp.lsp-installer"
 require("joma.lsp.mason")
 require("joma.lsp.handlers").setup()
-require "joma.lsp.null-ls"
+require ("joma.lsp.null-ls")
 
 local lsp_lines = require ("lsp_lines")
 

@@ -127,10 +127,11 @@ local config = {
         },
       },
       format = {
-        enabled = false,
-        -- settings = {
-        --   profile = "asdf"
-        -- }
+        enabled = true,
+        settings = {
+          url =home .. "/Documents/servers/jdtls/intellij-java-google-style.xml",
+          profile = "GoogleStyle",
+        },
       },
     },
     signatureHelp = { enabled = true },

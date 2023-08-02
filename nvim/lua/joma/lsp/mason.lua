@@ -3,7 +3,6 @@ local mason = require ("mason")
 local mason_lspconfig =require ("mason-lspconfig")
 
 local servers = {
-  "html",
   "jdtls",
   "jsonls",
   "tsserver",

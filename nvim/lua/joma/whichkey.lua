@@ -89,6 +89,14 @@ local mappings = {
   -- ["1"] = "which_key_ignore",
   ["w"] = {"<cmd>w!<cr>","Save"},
   ["q"] = {"<cmd>q!<cr>","Quit"},
+  ["t"] = {"<cmd>ToggleTerm<cr>", "Terminal"},
+
+    h ={
+      name ="harpoon",
+      a = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "add file"},
+      e = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "quick menu"},
+    },
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -98,15 +106,20 @@ local mappings = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
+  g = {
+    name = "Git",
+   s = { vim.cmd.Git, "Status" },
+  },
   f = {
-    name = "Find",
+    name = "File",
     f = { "<cmd>Telescope find_files<cr>", "Find files" },
     t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     s = { "<cmd>Telescope grep_string<cr>", "Find String" },
     i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
     l = { "<cmd>Telescope resume<cr>", "Last Search" },
     r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-    e = {"<cmd>NvimTreeToggle<cr>","File explorer"}
+    e = {"<cmd>NvimTreeToggle<cr>","File explorer"},
+    u = {"<cmd>UndotreeToggle<cr>", "Undo tree"}
   },
   l = {
     name = "LSP",
@@ -114,10 +127,9 @@ local mappings = {
     c = { "<cmd>lua require('joma.lsp').server_capabilities()<cr>", "Get Capabilities" },
     d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
     f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
-    F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     h = { "<cmd>lua require('lsp-inlayhints').toggle()<cr>", "Toggle Hints" },
-    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+    t = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Toggle lsp line" },
     j = {
       "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
       "Next Diagnostic",
@@ -126,20 +138,18 @@ local mappings = {
       "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
       "Prev Diagnostic",
     },
-    v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Text" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     o = { "<cmd>SymbolsOutline<cr>", "Outline" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-    t = { '<cmd>lua require("joma.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
   },
-  t = {
-    name = "Terminal",
-    ["1"] = { ":1ToggleTerm<cr>", "1" },
-    ["2"] = { ":2ToggleTerm<cr>", "2" },
-    ["3"] = { ":3ToggleTerm<cr>", "3" },
-    ["4"] = { ":4ToggleTerm<cr>", "4" },
+  b = {
+    name = "tab",
+    a = { "<cmd>tabnew<cr>", "New tab" },
+    z = { "<cmd>tabprevious<cr>", "Previous tab" },
+    n = { "<cmd>tabnext<cr>", "Next tab" },
   },
+
 }
 
 local vopts = {

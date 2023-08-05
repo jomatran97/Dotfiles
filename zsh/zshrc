@@ -120,6 +120,8 @@ alias venv="python3 -m venv"
 
 # git
 alias gl="git log --graph --oneline --decorate --all"
+alias ru="git clean -f"
+alias du="git clean -n -d"
 
 #nvim
 alias vi="nvim"
@@ -130,6 +132,7 @@ alias tc="cd ~/Documents/tyme/code/tc"
 alias tb="cd ~/Documents/tyme/code/tb"
 alias codefun="cd ~/Documents/personal/codefun/"
 alias ext="cd ~/Documents/external/"
+alias config="cd ~/.config/"
 
 #tmux 
 alias tma="tmux attach-session"
@@ -138,11 +141,12 @@ alias tmx="tmux"
 #list dir
 alias ls="ls -la"
 
-# funny alias
-alias pl="sudo"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-export JAVA_HOME=$(/usr/libexec/java_home)
+
+# python alias
+alias cls="python3 ~/Documents/personal/codefun/Python/Automation/clean_desktop.py"

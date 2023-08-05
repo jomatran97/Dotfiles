@@ -51,9 +51,14 @@ return packer.startup(function(use)
   -- Lua Development
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "nvim-lua/popup.nvim"
+  use "folke/lua-dev.nvim"
 
   -- Colorschemes
   use "lunarvim/darkplus.nvim"
+  use ({
+    "rose-pine/neovim",
+    as = 'rose-pine'
+  })
 
   -- File Explorer
   use "kyazdani42/nvim-tree.lua"
@@ -73,7 +78,6 @@ return packer.startup(function(use)
   use "christianchiarulli/lualine.nvim"
 
   -- Editing Support
-  use "karb94/neoscroll.nvim"
   use 'nacro90/numb.nvim'
   use "windwp/nvim-autopairs"
 
@@ -93,40 +97,37 @@ return packer.startup(function(use)
     wants = { "nvim-treesitter" }, -- or require if not used so far
   }
 
-  -- Completion
-  use "christianchiarulli/nvim-cmp"
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-emoji"
-  use "hrsh7th/cmp-nvim-lua"
+  -- Auto Completion
+  use("hrsh7th/nvim-cmp") -- completion plugin
+  use("hrsh7th/cmp-buffer") -- source for text in buffer
+  use("hrsh7th/cmp-path") -- source for file system paths
 
-  -- Snippet
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- snippets
+  use("L3MON4D3/LuaSnip") -- snippet engine
+  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+  use("rafamadriz/friendly-snippets") -- useful snippets
 
+  -- managing & installing lsp servers, linters & formatters
+  use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+  use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  -- configuring lsp servers
+  use("neovim/nvim-lspconfig") -- easily configure language servers
+  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+  use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+  use "lvimuser/lsp-inlayhints.nvim"
   use "ray-x/lsp_signature.nvim"
   use "SmiteshP/nvim-navic"
   use "simrat39/symbols-outline.nvim"
-  use "b0o/SchemaStore.nvim"
-  use "j-hui/fidget.nvim"
-  use "lvimuser/lsp-inlayhints.nvim"
-  -- use "simrat39/inlay-hints.nvim"
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
-  use {"folke/trouble.nvim",
-      wants = {"nvim-tree/nvim-web-devicons"}} 
-  use "onsails/lspkind-nvim"
+  use "b0o/SchemaStore.nvim"
 
-    -- Java
+  -- formatting & linting
+  use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+
+
+  -- Java
   use "mfussenegger/nvim-jdtls"
 
   -- Terminal
@@ -135,6 +136,12 @@ return packer.startup(function(use)
   -- Comment
   use "numToStr/Comment.nvim"
   use "folke/todo-comments.nvim"
+
+  -- util
+  use "ThePrimeagen/harpoon"
+  use "mbbill/undotree"
+  use "tpope/vim-fugitive"
+  use "folke/trouble.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

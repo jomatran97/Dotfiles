@@ -1,8 +1,6 @@
 M = {}
-local status_ok, _ = pcall(require, "lspconfig")
-if not status_ok then
-  return
-end
+
+local _ = pcall(require, "lspconfig")
 
 M.server_capabilities = function()
   local active_clients = vim.lsp.get_active_clients()
@@ -23,15 +21,15 @@ M.server_capabilities = function()
     vim.pretty_print(vim.lsp.get_active_clients()[active_client_map[choice]].server_capabilities)
   end)
 end
-
+require "joma.lsp.lsp-layhints"
 require "joma.lsp.lsp-signature"
--- require "user.lsp.lsp-installer"
-require("joma.lsp.mason")
+require "joma.lsp.lspkindrc"
+require "joma.lsp.lsprc"
+require "joma.lsp.null_ls"
 require("joma.lsp.handlers").setup()
-require ("joma.lsp.null-ls")
 
-local lsp_lines = require ("lsp_lines")
-
+local lsp_lines = require("lsp_lines")
 lsp_lines.setup()
+
 
 return M

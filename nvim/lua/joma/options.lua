@@ -45,10 +45,11 @@ opt.splitright = true
 opt.tabstop = 2
 opt.termguicolors = true
 opt.timeoutlen = 300
-opt.title = true
+opt.title = false
 opt.undofile = false
 opt.updatetime = 200
 opt.wildmode = "longest:full,full"
+opt.swapfile = false
 
 
 vim.g.markdown_recommended_style = 0

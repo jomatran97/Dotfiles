@@ -36,9 +36,14 @@ keymap("v", "<leader>r", "<cmd>set relativenumber!<cr>", opts)
 keymap('n', 'te', ':tabedit ', opts)
 
 -- Split window
-keymap('n', 'ss', ':split<Return><C-w>w', opts)
+keymap('n', 'sh', ':split<Return><C-w>w', opts)
 keymap('n', 'sv', ':vsplit<Return><C-w>w', opts)
 
 -- Increment/decrement
 keymap('n', '+', '<C-a>', opts)
 keymap('n', '-', '<C-x>', opts)
+
+-- harpoon
+keymap('n', '<C-n>', "<cmd>lua require('harpoon.ui').nav_next()<cr>", opts)
+keymap('n', '<C-p>', "<cmd>lua require('harpoon.ui').nav_prev()<cr>", opts)
+

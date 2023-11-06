@@ -50,7 +50,6 @@ opt.undofile = false
 opt.updatetime = 200
 opt.wildmode = "longest:full,full"
 opt.swapfile = false
-
-
+-- vim.g.guifont = "iosevka:h20"
 vim.g.markdown_recommended_style = 0
 

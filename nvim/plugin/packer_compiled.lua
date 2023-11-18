@@ -152,7 +152,7 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/haitran/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/christianchiarulli/lualine.nvim"
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,

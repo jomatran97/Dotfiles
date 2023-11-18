@@ -75,7 +75,7 @@ return packer.startup(function(use)
   use "tom-anders/telescope-vim-bookmarks.nvim"
 
   -- Statusline
-  use "christianchiarulli/lualine.nvim"
+  use "nvim-lualine/lualine.nvim"
 
   -- Editing Support
   use 'nacro90/numb.nvim'

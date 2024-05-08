@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim",                   opts = {} },
+    { "folke/neodev.nvim", opts = {} },
   },
   config = function()
     -- import lspconfig plugin
@@ -42,7 +42,7 @@ return {
         keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
         opts.desc = "See available code actions"
-        keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+        keymap.set({ "n", "v" }, "<leader>ca", "<cmd>lua vim.lsp.codelens.run()<cr>", opts) -- see available code actions, in visual mode will apply to selection
 
         opts.desc = "Smart rename"
         keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
@@ -102,21 +102,21 @@ return {
           },
         })
       end,
-      ["pyright"] = function()
-        lspconfig["pyright"].setup({
-          capabilities = capabilities,
-          cmd = { "pyright-langserver", "--stdio"  },
-          settings = {
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "openFilesOnly",
-                useLibraryCodeForTypes = true
-              }
-            }
-          }
-        })
-      end,
+      -- ["pyright"] = function()
+      --   lspconfig["pyright"].setup({
+      --     capabilities = capabilities,
+      --     cmd = { "pyright-langserver", "--stdio"  },
+      --     settings = {
+      --       python = {
+      --         analysis = {
+      --           autoSearchPaths = true,
+      --           diagnosticMode = "openFilesOnly",
+      --           useLibraryCodeForTypes = true
+      --         }
+      --       }
+      --     }
+      --   })
+      -- end,
     })
   end,
 }

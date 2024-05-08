@@ -24,6 +24,7 @@ alias du="git clean -n -d"
 
 # alias python command                                                    │    │
 alias venv="mkvirtualenv"
+
 # Setting PATH for Python 3 installed by brew
 export PATH=/usr/local/share/python:$PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/3.12/bin:$PATH

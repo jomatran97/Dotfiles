@@ -24,18 +24,14 @@ return {
       ensure_installed = {
         "json",
         "javascript",
-        "typescript",
-        "tsx",
         "yaml",
-        "html",
-        "markdown",
-        "markdown_inline",
         "bash",
         "lua",
-        "dockerfile",
         "gitignore",
         "vimdoc",
-        "python"
+        "python",
+        "markdown",
+        "markdown_inline"
       },
       incremental_selection = {
         enable = true,

@@ -1,5 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  event = "VeryLazy",
+
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
     local nvimtree = require("nvim-tree")
@@ -50,5 +52,11 @@ return {
         ignore = false,
       },
     })
+
+    local wk = require "which-key"
+    wk.register {
+      ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "File explorer" },
+      ["<leader>r"] = { "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer" },
+    }
   end,
 }

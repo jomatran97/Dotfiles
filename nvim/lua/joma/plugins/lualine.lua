@@ -1,71 +1,35 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  event = "VeryLazy",
   config = function()
-    local lualine = require("lualine")
-    local lazy_status = require("lazy.status") -- to configure lazy pending updates count
-
-    local colors = {
-      blue = "#65D1FF",
-      green = "#3EFFDC",
-      violet = "#FF61EF",
-      yellow = "#FFDA7B",
-      red = "#FF4A4A",
-      fg = "#c3ccdc",
-      bg = "#112638",
-      inactive_bg = "#2c3043",
-    }
-
-    local my_lualine_theme = {
-      normal = {
-        a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      insert = {
-        a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      visual = {
-        a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      command = {
-        a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      replace = {
-        a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
-      },
-      inactive = {
-        a = { bg = colors.inactive_bg, fg = colors.semilightgray, gui = "bold" },
-        b = { bg = colors.inactive_bg, fg = colors.semilightgray },
-        c = { bg = colors.inactive_bg, fg = colors.semilightgray },
-      },
-    }
-
-    -- configure lualine with modified theme
-    lualine.setup({
+    require('lualine').setup {
       options = {
-        theme = my_lualine_theme,
+        theme = 'auto',
       },
       sections = {
-        lualine_x = {
-          {
-            lazy_status.updates,
-            cond = lazy_status.has_updates,
-            color = { fg = "#ff9e64" },
-          },
-          { "encoding" },
-          { "fileformat" },
-          { "filetype" },
-        },
-      },
-    })
-  end,
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff' },
+        -- lualine_c = { 'buffers' },
+        lualine_x = { 'tabs' },
+        lualine_y = { 'progress' },
+        lualine_z = {
+          { 'diagnostics',
+            sources = { 'nvim_diagnostic', 'nvim_lsp' },
+            sections = { 'error', 'warn', 'info', 'hint' },
+            diagnostics_color = {
+              -- Same values as the general color option can be used here.
+              error = 'DiagnosticError', -- Changes diagnostics' error color.
+              warn  = 'DiagnosticWarn', -- Changes diagnostics' warn color.
+              info  = 'DiagnosticInfo', -- Changes diagnostics' info color.
+              hint  = 'DiagnosticHint', -- Changes diagnostics' hint color.
+            },
+            symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
+            colored = true,         -- Displays diagnostics status in color if set to true.
+            update_in_insert = false, -- Update diagnostics in insert mode.
+            always_visible = false, -- Show diagnostics even if there are none.
+          }
+        }
+      }
+    }
+  end
 }

@@ -20,7 +20,7 @@ alias codefun="cd ~/Documents/personal/codefun/"
 alias gl="git log --graph --oneline --decorate --all"
 alias ru="git clean -f"
 alias du="git clean -n -d"
-alias gp="git pull --rebase"
+alias gp="git pull --rebase origin"
 
 # alias python command                                                    │    │
 alias venv="mkvirtualenv"

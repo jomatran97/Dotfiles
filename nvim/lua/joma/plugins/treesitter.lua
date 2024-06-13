@@ -31,7 +31,7 @@ return {
         "vimdoc",
         "python",
         "markdown",
-        "markdown_inline"
+        "markdown_inline",
       },
       incremental_selection = {
         enable = true,

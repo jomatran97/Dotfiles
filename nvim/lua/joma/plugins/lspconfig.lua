@@ -39,7 +39,20 @@ function M.config()
   local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
   -- used to enable autocompletion (assign to every lsp server config)
-  local capabilities = cmp_nvim_lsp.default_capabilities()
+  -- local capabilities = cmp_nvim_lsp.default_capabilities()
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+      "documentation",
+      "detail",
+      "additionalTextEdits",
+    },
+  }
+  capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+  }
 
   -- Change the Diagnostic symbols in the sign column (gutter)
   -- (not in youtube nvim video)

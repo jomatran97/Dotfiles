@@ -9,8 +9,8 @@ return {
   config = function()
     local which_key = require("which-key")
     local mappings = {
-      t = {"<cmd>Lspsaga term_toggle<cr>", "Float terminal"},
-      s = {
+      t = { "<cmd>Lspsaga term_toggle<cr>", "Float terminal" },
+      S = {
         name = "Windows management",
         v = { "<C-w>v", "Split window vertically" },
         h = { "<C-w>s", "Split window horizontally" },
@@ -38,7 +38,11 @@ return {
         q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
         R = { "<cmd>Lspsaga rename<cr>", "Rename" },
         r = { "<cmd>Lspsaga finder<cr>", "Reference" },
-        o = {"<cmd>Lspsaga outline<cr>", "Outline"}
+        o = { "<cmd>Lspsaga outline<cr>", "Outline" },
+      },
+      g = {
+        name = "Git",
+        b = { "<cmd>Gitsigns blame_line<cr>", "blame_line" },
       },
     }
     local opts = {
@@ -48,9 +52,9 @@ return {
     which_key.register(mappings, opts)
 
     local vopts = {
-      mode = "v", -- VISUAL mode
+      mode = "v",    -- VISUAL mode
       prefix = "<leader>",
-      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+      buffer = nil,  -- Global mappings. Specify a buffer number for buffer local mappings
       silent = true, -- use `silent` when creating keymaps
     }
 

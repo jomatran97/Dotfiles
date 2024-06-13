@@ -53,10 +53,10 @@ return {
       },
     })
 
-    local wk = require "which-key"
-    wk.register {
+    local wk = require("which-key")
+    wk.register({
       ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "File explorer" },
       ["<leader>r"] = { "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer" },
-    }
+    })
   end,
 }

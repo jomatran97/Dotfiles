@@ -14,7 +14,6 @@ local options = {
   autoread = true,
   nu = true,
   relativenumber = true,
-  foldlevelstart = 99,
   scrolloff = 8,
   backup = false,
   writebackup = false,
@@ -24,8 +23,6 @@ local options = {
   linebreak = true,
   ignorecase = true,
   spell = false,
-  foldmethod = "manual",
-  foldenable = false,
 }
 
 for k, v in pairs(options) do
@@ -33,5 +30,5 @@ for k, v in pairs(options) do
 end
 
 for k, v in pairs(globals) do
-	vim.g[k] = v
+  vim.g[k] = v
 end

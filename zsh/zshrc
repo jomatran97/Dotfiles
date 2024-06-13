@@ -15,8 +15,6 @@ alias tb="cd ~/Documents/company/tyme/code/tb"
 alias tx="cd ~/Documents/company/tyme/code/tx"
 alias sbc="cd ~/Documents/company/sbc"
 alias codefun="cd ~/Documents/personal/codefun/"
-alias ext="cd ~/Documents/external/"
-alias config="cd ~/.config/"
 
 # git command alias 
 alias gl="git log --graph --oneline --decorate --all"

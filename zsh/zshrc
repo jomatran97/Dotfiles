@@ -75,7 +75,6 @@ _fzf_comprun() {
 }
 
 # ----- Bat (better cat) -----
-# export BAT_THEME=tokyonight_night
 alias cat="bat"
 # ---- Eza (better ls) -----
 alias ls="eza --color=always --long --git  --no-filesize --icons=always --no-time --no-user --no-permissions"

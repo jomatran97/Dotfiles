@@ -23,6 +23,7 @@ local options = {
   linebreak = true,
   ignorecase = true,
   spell = false,
+  fixendofline=false
 }
 
 for k, v in pairs(options) do

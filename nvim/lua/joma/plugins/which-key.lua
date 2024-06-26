@@ -10,6 +10,8 @@ return {
     local which_key = require("which-key")
     local mappings = {
       t = { "<cmd>Lspsaga term_toggle<cr>", "Float terminal" },
+      q = {"<cmd>q!<CR>","Force quit"},
+      w = {"<cmd>w!<CR>","Force save"},
       S = {
         name = "Windows management",
         v = { "<C-w>v", "Split window vertically" },
